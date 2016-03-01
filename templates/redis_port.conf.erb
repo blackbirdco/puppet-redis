@@ -33,6 +33,9 @@ bind <%= @redis_bind_address %>
 # on a unix socket when not specified.
 #
 # unixsocket /tmp/redis.sock
+<% if @redis_bind_sock %>
+unixsocket <%= @redis_bind_sock %>
+<% end %>
 
 # Close the connection after a client is idle for N seconds (0 to disable)
 timeout <%= @redis_timeout %>
